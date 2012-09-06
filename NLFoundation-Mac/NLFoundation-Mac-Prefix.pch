@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'NLFoundation-Mac' target in the 'NLFoundation-Mac' project
+//
+
+#ifdef __OBJC__
+    #import <Cocoa/Cocoa.h>
+#endif

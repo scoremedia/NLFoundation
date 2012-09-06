@@ -1,0 +1,525 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C6BF2FB013F819E800F8C320 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6BF2FAF13F819E800F8C320 /* Cocoa.framework */; };
+		C6BF2FBA13F819E800F8C320 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C6BF2FB813F819E800F8C320 /* InfoPlist.strings */; };
+		C6BF2FBE13F819E800F8C320 /* NLFoundation_Mac.m in Sources */ = {isa = PBXBuildFile; fileRef = C6BF2FBD13F819E800F8C320 /* NLFoundation_Mac.m */; };
+		C6BF2FC613F819E800F8C320 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6BF2FC513F819E800F8C320 /* SenTestingKit.framework */; };
+		C6BF2FC713F819E800F8C320 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6BF2FAF13F819E800F8C320 /* Cocoa.framework */; };
+		C6BF2FCA13F819E800F8C320 /* NLFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6BF2FAC13F819E800F8C320 /* NLFoundation.framework */; };
+		C6BF2FD013F819E800F8C320 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C6BF2FCE13F819E800F8C320 /* InfoPlist.strings */; };
+		C6BF2FD313F819E800F8C320 /* NLFoundation_MacTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C6BF2FD213F819E800F8C320 /* NLFoundation_MacTests.m */; };
+		C6BF300613F81AD900F8C320 /* NLFoundation.h in Headers */ = {isa = PBXBuildFile; fileRef = C6BF2FF313F81AD900F8C320 /* NLFoundation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C6BF300713F81AD900F8C320 /* NLUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = C6BF2FF413F81AD900F8C320 /* NLUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C6BF300813F81AD900F8C320 /* NLUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = C6BF2FF513F81AD900F8C320 /* NLUtilities.m */; };
+		C6BF300913F81AD900F8C320 /* NSMutableArray+NLQueueAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = C6BF2FF613F81AD900F8C320 /* NSMutableArray+NLQueueAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C6BF300A13F81AD900F8C320 /* NSMutableArray+NLQueueAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = C6BF2FF713F81AD900F8C320 /* NSMutableArray+NLQueueAdditions.m */; };
+		C6BF300B13F81AD900F8C320 /* NSMutableDictionary+NLQueueAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = C6BF2FF813F81AD900F8C320 /* NSMutableDictionary+NLQueueAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C6BF300C13F81AD900F8C320 /* NSMutableDictionary+NLQueueAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = C6BF2FF913F81AD900F8C320 /* NSMutableDictionary+NLQueueAdditions.m */; };
+		C6BF300D13F81AD900F8C320 /* NSObject+NLKVCAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = C6BF2FFA13F81AD900F8C320 /* NSObject+NLKVCAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C6BF300E13F81AD900F8C320 /* NSObject+NLKVCAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = C6BF2FFB13F81AD900F8C320 /* NSObject+NLKVCAdditions.m */; };
+		C6BF300F13F81AD900F8C320 /* NSURL+NLAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = C6BF2FFC13F81AD900F8C320 /* NSURL+NLAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C6BF301013F81AD900F8C320 /* NSURL+NLAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = C6BF2FFD13F81AD900F8C320 /* NSURL+NLAdditions.m */; };
+		C6BF301113F81AD900F8C320 /* NSDictionary+NLURLAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = C6BF2FFE13F81AD900F8C320 /* NSDictionary+NLURLAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C6BF301213F81AD900F8C320 /* NSDictionary+NLURLAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = C6BF2FFF13F81AD900F8C320 /* NSDictionary+NLURLAdditions.m */; };
+		C6BF301313F81AD900F8C320 /* NSString+NLURLQueryStringAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = C6BF300013F81AD900F8C320 /* NSString+NLURLQueryStringAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C6BF301413F81AD900F8C320 /* NSString+NLURLQueryStringAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = C6BF300113F81AD900F8C320 /* NSString+NLURLQueryStringAdditions.m */; };
+		C6BF301513F81AD900F8C320 /* NSHTTPURLResponse+NLHTTPHeaderFieldsAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = C6BF300213F81AD900F8C320 /* NSHTTPURLResponse+NLHTTPHeaderFieldsAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C6BF301613F81AD900F8C320 /* NSHTTPURLResponse+NLHTTPHeaderFieldsAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = C6BF300313F81AD900F8C320 /* NSHTTPURLResponse+NLHTTPHeaderFieldsAdditions.m */; };
+		C6BF301713F81AD900F8C320 /* NSDateFormatter+NLHTTPAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = C6BF300413F81AD900F8C320 /* NSDateFormatter+NLHTTPAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C6BF301813F81AD900F8C320 /* NSDateFormatter+NLHTTPAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = C6BF300513F81AD900F8C320 /* NSDateFormatter+NLHTTPAdditions.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C6BF2FC813F819E800F8C320 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C6BF2FA213F819E700F8C320 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C6BF2FAB13F819E800F8C320;
+			remoteInfo = "NLFoundation-Mac";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		C6BF2FAC13F819E800F8C320 /* NLFoundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NLFoundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C6BF2FAF13F819E800F8C320 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		C6BF2FB213F819E800F8C320 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		C6BF2FB313F819E800F8C320 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		C6BF2FB413F819E800F8C320 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		C6BF2FB713F819E800F8C320 /* NLFoundation-Mac-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NLFoundation-Mac-Info.plist"; sourceTree = "<group>"; };
+		C6BF2FB913F819E800F8C320 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C6BF2FBB13F819E800F8C320 /* NLFoundation-Mac-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NLFoundation-Mac-Prefix.pch"; sourceTree = "<group>"; };
+		C6BF2FBC13F819E800F8C320 /* NLFoundation_Mac.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NLFoundation_Mac.h; sourceTree = "<group>"; };
+		C6BF2FBD13F819E800F8C320 /* NLFoundation_Mac.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NLFoundation_Mac.m; sourceTree = "<group>"; };
+		C6BF2FC413F819E800F8C320 /* NLFoundation-MacTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "NLFoundation-MacTests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C6BF2FC513F819E800F8C320 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		C6BF2FCD13F819E800F8C320 /* NLFoundation-MacTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NLFoundation-MacTests-Info.plist"; sourceTree = "<group>"; };
+		C6BF2FCF13F819E800F8C320 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C6BF2FD113F819E800F8C320 /* NLFoundation_MacTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NLFoundation_MacTests.h; sourceTree = "<group>"; };
+		C6BF2FD213F819E800F8C320 /* NLFoundation_MacTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NLFoundation_MacTests.m; sourceTree = "<group>"; };
+		C6BF2FF313F81AD900F8C320 /* NLFoundation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NLFoundation.h; sourceTree = "<group>"; };
+		C6BF2FF413F81AD900F8C320 /* NLUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NLUtilities.h; sourceTree = "<group>"; };
+		C6BF2FF513F81AD900F8C320 /* NLUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NLUtilities.m; sourceTree = "<group>"; };
+		C6BF2FF613F81AD900F8C320 /* NSMutableArray+NLQueueAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+NLQueueAdditions.h"; sourceTree = "<group>"; };
+		C6BF2FF713F81AD900F8C320 /* NSMutableArray+NLQueueAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+NLQueueAdditions.m"; sourceTree = "<group>"; };
+		C6BF2FF813F81AD900F8C320 /* NSMutableDictionary+NLQueueAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableDictionary+NLQueueAdditions.h"; sourceTree = "<group>"; };
+		C6BF2FF913F81AD900F8C320 /* NSMutableDictionary+NLQueueAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableDictionary+NLQueueAdditions.m"; sourceTree = "<group>"; };
+		C6BF2FFA13F81AD900F8C320 /* NSObject+NLKVCAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+NLKVCAdditions.h"; sourceTree = "<group>"; };
+		C6BF2FFB13F81AD900F8C320 /* NSObject+NLKVCAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+NLKVCAdditions.m"; sourceTree = "<group>"; };
+		C6BF2FFC13F81AD900F8C320 /* NSURL+NLAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+NLAdditions.h"; sourceTree = "<group>"; };
+		C6BF2FFD13F81AD900F8C320 /* NSURL+NLAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+NLAdditions.m"; sourceTree = "<group>"; };
+		C6BF2FFE13F81AD900F8C320 /* NSDictionary+NLURLAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+NLURLAdditions.h"; sourceTree = "<group>"; };
+		C6BF2FFF13F81AD900F8C320 /* NSDictionary+NLURLAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+NLURLAdditions.m"; sourceTree = "<group>"; };
+		C6BF300013F81AD900F8C320 /* NSString+NLURLQueryStringAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+NLURLQueryStringAdditions.h"; sourceTree = "<group>"; };
+		C6BF300113F81AD900F8C320 /* NSString+NLURLQueryStringAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+NLURLQueryStringAdditions.m"; sourceTree = "<group>"; };
+		C6BF300213F81AD900F8C320 /* NSHTTPURLResponse+NLHTTPHeaderFieldsAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSHTTPURLResponse+NLHTTPHeaderFieldsAdditions.h"; sourceTree = "<group>"; };
+		C6BF300313F81AD900F8C320 /* NSHTTPURLResponse+NLHTTPHeaderFieldsAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSHTTPURLResponse+NLHTTPHeaderFieldsAdditions.m"; sourceTree = "<group>"; };
+		C6BF300413F81AD900F8C320 /* NSDateFormatter+NLHTTPAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDateFormatter+NLHTTPAdditions.h"; sourceTree = "<group>"; };
+		C6BF300513F81AD900F8C320 /* NSDateFormatter+NLHTTPAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDateFormatter+NLHTTPAdditions.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C6BF2FA813F819E800F8C320 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C6BF2FB013F819E800F8C320 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C6BF2FC013F819E800F8C320 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C6BF2FC613F819E800F8C320 /* SenTestingKit.framework in Frameworks */,
+				C6BF2FC713F819E800F8C320 /* Cocoa.framework in Frameworks */,
+				C6BF2FCA13F819E800F8C320 /* NLFoundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C6BF2FA013F819E700F8C320 = {
+			isa = PBXGroup;
+			children = (
+				C6BF2FF113F81ABE00F8C320 /* Classes */,
+				C6BF2FB513F819E800F8C320 /* NLFoundation-Mac */,
+				C6BF2FCB13F819E800F8C320 /* NLFoundation-MacTests */,
+				C6BF2FAE13F819E800F8C320 /* Frameworks */,
+				C6BF2FAD13F819E800F8C320 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C6BF2FAD13F819E800F8C320 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C6BF2FAC13F819E800F8C320 /* NLFoundation.framework */,
+				C6BF2FC413F819E800F8C320 /* NLFoundation-MacTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C6BF2FAE13F819E800F8C320 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C6BF2FAF13F819E800F8C320 /* Cocoa.framework */,
+				C6BF2FC513F819E800F8C320 /* SenTestingKit.framework */,
+				C6BF2FB113F819E800F8C320 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C6BF2FB113F819E800F8C320 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C6BF2FB213F819E800F8C320 /* AppKit.framework */,
+				C6BF2FB313F819E800F8C320 /* CoreData.framework */,
+				C6BF2FB413F819E800F8C320 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		C6BF2FB513F819E800F8C320 /* NLFoundation-Mac */ = {
+			isa = PBXGroup;
+			children = (
+				C6BF2FBC13F819E800F8C320 /* NLFoundation_Mac.h */,
+				C6BF2FBD13F819E800F8C320 /* NLFoundation_Mac.m */,
+				C6BF2FB613F819E800F8C320 /* Supporting Files */,
+			);
+			path = "NLFoundation-Mac";
+			sourceTree = "<group>";
+		};
+		C6BF2FB613F819E800F8C320 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C6BF2FB713F819E800F8C320 /* NLFoundation-Mac-Info.plist */,
+				C6BF2FB813F819E800F8C320 /* InfoPlist.strings */,
+				C6BF2FBB13F819E800F8C320 /* NLFoundation-Mac-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C6BF2FCB13F819E800F8C320 /* NLFoundation-MacTests */ = {
+			isa = PBXGroup;
+			children = (
+				C6BF2FD113F819E800F8C320 /* NLFoundation_MacTests.h */,
+				C6BF2FD213F819E800F8C320 /* NLFoundation_MacTests.m */,
+				C6BF2FCC13F819E800F8C320 /* Supporting Files */,
+			);
+			path = "NLFoundation-MacTests";
+			sourceTree = "<group>";
+		};
+		C6BF2FCC13F819E800F8C320 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C6BF2FCD13F819E800F8C320 /* NLFoundation-MacTests-Info.plist */,
+				C6BF2FCE13F819E800F8C320 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C6BF2FF113F81ABE00F8C320 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				C6BF2FF313F81AD900F8C320 /* NLFoundation.h */,
+				C6BF2FF413F81AD900F8C320 /* NLUtilities.h */,
+				C6BF2FF513F81AD900F8C320 /* NLUtilities.m */,
+				C6BF2FF613F81AD900F8C320 /* NSMutableArray+NLQueueAdditions.h */,
+				C6BF2FF713F81AD900F8C320 /* NSMutableArray+NLQueueAdditions.m */,
+				C6BF2FF813F81AD900F8C320 /* NSMutableDictionary+NLQueueAdditions.h */,
+				C6BF2FF913F81AD900F8C320 /* NSMutableDictionary+NLQueueAdditions.m */,
+				C6BF2FFA13F81AD900F8C320 /* NSObject+NLKVCAdditions.h */,
+				C6BF2FFB13F81AD900F8C320 /* NSObject+NLKVCAdditions.m */,
+				C6BF2FFC13F81AD900F8C320 /* NSURL+NLAdditions.h */,
+				C6BF2FFD13F81AD900F8C320 /* NSURL+NLAdditions.m */,
+				C6BF2FFE13F81AD900F8C320 /* NSDictionary+NLURLAdditions.h */,
+				C6BF2FFF13F81AD900F8C320 /* NSDictionary+NLURLAdditions.m */,
+				C6BF300013F81AD900F8C320 /* NSString+NLURLQueryStringAdditions.h */,
+				C6BF300113F81AD900F8C320 /* NSString+NLURLQueryStringAdditions.m */,
+				C6BF300213F81AD900F8C320 /* NSHTTPURLResponse+NLHTTPHeaderFieldsAdditions.h */,
+				C6BF300313F81AD900F8C320 /* NSHTTPURLResponse+NLHTTPHeaderFieldsAdditions.m */,
+				C6BF300413F81AD900F8C320 /* NSDateFormatter+NLHTTPAdditions.h */,
+				C6BF300513F81AD900F8C320 /* NSDateFormatter+NLHTTPAdditions.m */,
+			);
+			name = Classes;
+			path = NLFoundation;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		C6BF2FA913F819E800F8C320 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C6BF300613F81AD900F8C320 /* NLFoundation.h in Headers */,
+				C6BF300713F81AD900F8C320 /* NLUtilities.h in Headers */,
+				C6BF300913F81AD900F8C320 /* NSMutableArray+NLQueueAdditions.h in Headers */,
+				C6BF300B13F81AD900F8C320 /* NSMutableDictionary+NLQueueAdditions.h in Headers */,
+				C6BF300D13F81AD900F8C320 /* NSObject+NLKVCAdditions.h in Headers */,
+				C6BF300F13F81AD900F8C320 /* NSURL+NLAdditions.h in Headers */,
+				C6BF301113F81AD900F8C320 /* NSDictionary+NLURLAdditions.h in Headers */,
+				C6BF301313F81AD900F8C320 /* NSString+NLURLQueryStringAdditions.h in Headers */,
+				C6BF301513F81AD900F8C320 /* NSHTTPURLResponse+NLHTTPHeaderFieldsAdditions.h in Headers */,
+				C6BF301713F81AD900F8C320 /* NSDateFormatter+NLHTTPAdditions.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		C6BF2FAB13F819E800F8C320 /* NLFoundation-Mac */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C6BF2FD613F819E800F8C320 /* Build configuration list for PBXNativeTarget "NLFoundation-Mac" */;
+			buildPhases = (
+				C6BF2FA713F819E800F8C320 /* Sources */,
+				C6BF2FA813F819E800F8C320 /* Frameworks */,
+				C6BF2FA913F819E800F8C320 /* Headers */,
+				C6BF2FAA13F819E800F8C320 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "NLFoundation-Mac";
+			productName = "NLFoundation-Mac";
+			productReference = C6BF2FAC13F819E800F8C320 /* NLFoundation.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		C6BF2FC313F819E800F8C320 /* NLFoundation-MacTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C6BF2FD913F819E800F8C320 /* Build configuration list for PBXNativeTarget "NLFoundation-MacTests" */;
+			buildPhases = (
+				C6BF2FBF13F819E800F8C320 /* Sources */,
+				C6BF2FC013F819E800F8C320 /* Frameworks */,
+				C6BF2FC113F819E800F8C320 /* Resources */,
+				C6BF2FC213F819E800F8C320 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C6BF2FC913F819E800F8C320 /* PBXTargetDependency */,
+			);
+			name = "NLFoundation-MacTests";
+			productName = "NLFoundation-MacTests";
+			productReference = C6BF2FC413F819E800F8C320 /* NLFoundation-MacTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C6BF2FA213F819E700F8C320 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+				ORGANIZATIONNAME = "NuLayer Inc.";
+			};
+			buildConfigurationList = C6BF2FA513F819E700F8C320 /* Build configuration list for PBXProject "NLFoundation-Mac" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = C6BF2FA013F819E700F8C320;
+			productRefGroup = C6BF2FAD13F819E800F8C320 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C6BF2FAB13F819E800F8C320 /* NLFoundation-Mac */,
+				C6BF2FC313F819E800F8C320 /* NLFoundation-MacTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C6BF2FAA13F819E800F8C320 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C6BF2FBA13F819E800F8C320 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C6BF2FC113F819E800F8C320 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C6BF2FD013F819E800F8C320 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		C6BF2FC213F819E800F8C320 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C6BF2FA713F819E800F8C320 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C6BF2FBE13F819E800F8C320 /* NLFoundation_Mac.m in Sources */,
+				C6BF300813F81AD900F8C320 /* NLUtilities.m in Sources */,
+				C6BF300A13F81AD900F8C320 /* NSMutableArray+NLQueueAdditions.m in Sources */,
+				C6BF300C13F81AD900F8C320 /* NSMutableDictionary+NLQueueAdditions.m in Sources */,
+				C6BF300E13F81AD900F8C320 /* NSObject+NLKVCAdditions.m in Sources */,
+				C6BF301013F81AD900F8C320 /* NSURL+NLAdditions.m in Sources */,
+				C6BF301213F81AD900F8C320 /* NSDictionary+NLURLAdditions.m in Sources */,
+				C6BF301413F81AD900F8C320 /* NSString+NLURLQueryStringAdditions.m in Sources */,
+				C6BF301613F81AD900F8C320 /* NSHTTPURLResponse+NLHTTPHeaderFieldsAdditions.m in Sources */,
+				C6BF301813F81AD900F8C320 /* NSDateFormatter+NLHTTPAdditions.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C6BF2FBF13F819E800F8C320 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C6BF2FD313F819E800F8C320 /* NLFoundation_MacTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C6BF2FC913F819E800F8C320 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C6BF2FAB13F819E800F8C320 /* NLFoundation-Mac */;
+			targetProxy = C6BF2FC813F819E800F8C320 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		C6BF2FB813F819E800F8C320 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C6BF2FB913F819E800F8C320 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		C6BF2FCE13F819E800F8C320 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C6BF2FCF13F819E800F8C320 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C6BF2FD413F819E800F8C320 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INSTALL_PATH = "@rpath";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		C6BF2FD513F819E800F8C320 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INSTALL_PATH = "@rpath";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		C6BF2FD713F819E800F8C320 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "NLFoundation-Mac/NLFoundation-Mac-Prefix.pch";
+				INFOPLIST_FILE = "NLFoundation-Mac/NLFoundation-Mac-Info.plist";
+				PRODUCT_NAME = NLFoundation;
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Debug;
+		};
+		C6BF2FD813F819E800F8C320 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "NLFoundation-Mac/NLFoundation-Mac-Prefix.pch";
+				INFOPLIST_FILE = "NLFoundation-Mac/NLFoundation-Mac-Info.plist";
+				PRODUCT_NAME = NLFoundation;
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Release;
+		};
+		C6BF2FDA13F819E800F8C320 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "NLFoundation-Mac/NLFoundation-Mac-Prefix.pch";
+				INFOPLIST_FILE = "NLFoundation-MacTests/NLFoundation-MacTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		C6BF2FDB13F819E800F8C320 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "NLFoundation-Mac/NLFoundation-Mac-Prefix.pch";
+				INFOPLIST_FILE = "NLFoundation-MacTests/NLFoundation-MacTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C6BF2FA513F819E700F8C320 /* Build configuration list for PBXProject "NLFoundation-Mac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C6BF2FD413F819E800F8C320 /* Debug */,
+				C6BF2FD513F819E800F8C320 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C6BF2FD613F819E800F8C320 /* Build configuration list for PBXNativeTarget "NLFoundation-Mac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C6BF2FD713F819E800F8C320 /* Debug */,
+				C6BF2FD813F819E800F8C320 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C6BF2FD913F819E800F8C320 /* Build configuration list for PBXNativeTarget "NLFoundation-MacTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C6BF2FDA13F819E800F8C320 /* Debug */,
+				C6BF2FDB13F819E800F8C320 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C6BF2FA213F819E700F8C320 /* Project object */;
+}
