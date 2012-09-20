@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D5F5F76160BAB94003CB686 /* NSDictionary+NLFormEncodingAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D5F5F74160BAB94003CB686 /* NSDictionary+NLFormEncodingAdditions.h */; };
+		3D5F5F77160BAB94003CB686 /* NSDictionary+NLFormEncodingAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D5F5F74160BAB94003CB686 /* NSDictionary+NLFormEncodingAdditions.h */; };
+		3D5F5F78160BAB94003CB686 /* NSDictionary+NLFormEncodingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D5F5F75160BAB94003CB686 /* NSDictionary+NLFormEncodingAdditions.m */; };
+		3D5F5F79160BAB94003CB686 /* NSDictionary+NLFormEncodingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D5F5F75160BAB94003CB686 /* NSDictionary+NLFormEncodingAdditions.m */; };
+		3D5F5F7B160BABA2003CB686 /* NSDictionary+NLFormEncodingAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D5F5F74160BAB94003CB686 /* NSDictionary+NLFormEncodingAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C61F9A01153CA0CA00E0BD3E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACBBE490F95108600F1A2B1 /* Foundation.framework */; };
 		C61F9A0B153CA0F200E0BD3E /* NLFoundation.h in Headers */ = {isa = PBXBuildFile; fileRef = C6DD4D93128855C700C582AB /* NLFoundation.h */; };
 		C61F9A0C153CA0F200E0BD3E /* NLUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = C6DD4D7C1288543200C582AB /* NLUtilities.h */; };
@@ -77,6 +82,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3D5F5F74160BAB94003CB686 /* NSDictionary+NLFormEncodingAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+NLFormEncodingAdditions.h"; sourceTree = "<group>"; };
+		3D5F5F75160BAB94003CB686 /* NSDictionary+NLFormEncodingAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+NLFormEncodingAdditions.m"; sourceTree = "<group>"; };
 		AA747D9E0F9514B9006C5449 /* NLFoundation_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NLFoundation_Prefix.pch; sourceTree = "<group>"; };
 		AACBBE490F95108600F1A2B1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C61F99E8153CA0A600E0BD3E /* NLFoundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NLFoundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -168,6 +175,8 @@
 				C6DD4D871288547000C582AB /* NSURL+NLAdditions.m */,
 				C6DD4E67128859AD00C582AB /* NSDictionary+NLURLAdditions.h */,
 				C6DD4E68128859AD00C582AB /* NSDictionary+NLURLAdditions.m */,
+				3D5F5F74160BAB94003CB686 /* NSDictionary+NLFormEncodingAdditions.h */,
+				3D5F5F75160BAB94003CB686 /* NSDictionary+NLFormEncodingAdditions.m */,
 				C6DD4E5C1288593D00C582AB /* NSString+NLURLQueryStringAdditions.h */,
 				C6DD4E5D1288593D00C582AB /* NSString+NLURLQueryStringAdditions.m */,
 				C6DD4E7B12885A5800C582AB /* NSHTTPURLResponse+NLHTTPHeaderFieldsAdditions.h */,
@@ -204,6 +213,7 @@
 				C61F9A29153CA29200E0BD3E /* NSString+NLURLQueryStringAdditions.h in Headers */,
 				C61F9A2A153CA29200E0BD3E /* NSHTTPURLResponse+NLHTTPHeaderFieldsAdditions.h in Headers */,
 				C61F9A2B153CA29200E0BD3E /* NSDateFormatter+NLHTTPAdditions.h in Headers */,
+				3D5F5F7B160BABA2003CB686 /* NSDictionary+NLFormEncodingAdditions.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -221,6 +231,7 @@
 				C61F9A12153CA0F200E0BD3E /* NSString+NLURLQueryStringAdditions.h in Headers */,
 				C61F9A13153CA0F200E0BD3E /* NSHTTPURLResponse+NLHTTPHeaderFieldsAdditions.h in Headers */,
 				C61F9A14153CA0F200E0BD3E /* NSDateFormatter+NLHTTPAdditions.h in Headers */,
+				3D5F5F76160BAB94003CB686 /* NSDictionary+NLFormEncodingAdditions.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -238,6 +249,7 @@
 				C61F9A52153CA7A600E0BD3E /* NSString+NLURLQueryStringAdditions.h in Headers */,
 				C61F9A53153CA7A600E0BD3E /* NSHTTPURLResponse+NLHTTPHeaderFieldsAdditions.h in Headers */,
 				C61F9A54153CA7A600E0BD3E /* NSDateFormatter+NLHTTPAdditions.h in Headers */,
+				3D5F5F77160BAB94003CB686 /* NSDictionary+NLFormEncodingAdditions.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -358,6 +370,7 @@
 				C61F9A1B153CA11400E0BD3E /* NSString+NLURLQueryStringAdditions.m in Sources */,
 				C61F9A1C153CA11400E0BD3E /* NSHTTPURLResponse+NLHTTPHeaderFieldsAdditions.m in Sources */,
 				C61F9A1D153CA11400E0BD3E /* NSDateFormatter+NLHTTPAdditions.m in Sources */,
+				3D5F5F78160BAB94003CB686 /* NSDictionary+NLFormEncodingAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -374,6 +387,7 @@
 				C61F9A48153CA79900E0BD3E /* NSString+NLURLQueryStringAdditions.m in Sources */,
 				C61F9A49153CA79900E0BD3E /* NSHTTPURLResponse+NLHTTPHeaderFieldsAdditions.m in Sources */,
 				C61F9A4A153CA79900E0BD3E /* NSDateFormatter+NLHTTPAdditions.m in Sources */,
+				3D5F5F79160BAB94003CB686 /* NSDictionary+NLFormEncodingAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
