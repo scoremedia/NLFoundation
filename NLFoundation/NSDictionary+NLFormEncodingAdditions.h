@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface NLMultipartEncoding : NSObject
+@interface NLFormEncoding : NSObject
 
 @property(nonatomic, readonly) NSString *contentType;
 @property(nonatomic, readonly) NSData   *body;
@@ -23,6 +23,8 @@
 
 @interface NSDictionary (NLFormEncodingAdditions)
 
-- (NLMultipartEncoding *)multipartEncoding;
+- (BOOL)requiresMultipartEncoding;
+
+- (NLFormEncoding *)multipartEncoding;
 
 @end

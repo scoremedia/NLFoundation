@@ -8,7 +8,7 @@
 
 #import "NSDictionary+NLFormEncodingAdditions.h"
 
-@implementation NLMultipartEncoding
+@implementation NLFormEncoding
 
 @synthesize contentType, body;
 
@@ -42,7 +42,20 @@
 
 @implementation NSDictionary (NLFormEncodingAdditions)
 
-- (NLMultipartEncoding *)multipartEncoding
+- (BOOL)requiresMultipartEncoding
+{
+    for(NSString *key in self)
+    {
+        id object = [self objectForKey:key];
+        
+        if(([object isKindOfClass:[NSDictionary class]] && [object requiresMultipartEncoding]) || [object isKindOfClass:[NLFormEncoding class]] || [object isKindOfClass:[NSData class]])
+            return YES;
+    }
+    
+    return NO;
+}
+
+- (NLFormEncoding *)multipartEncoding
 {
     NSMutableArray *parts = [NSMutableArray arrayWithCapacity:[self count]];
     
@@ -53,10 +66,10 @@
         if([object isKindOfClass:[NSDictionary class]])
             object = [object multipartEncoding];
         
-        if([object isKindOfClass:[NLMultipartEncoding class]] && [object contentType] == nil)
+        if([object isKindOfClass:[NLFormEncoding class]] && [object contentType] == nil)
             object = [object body];
         
-        if([object isKindOfClass:[NLMultipartEncoding class]])
+        if([object isKindOfClass:[NLFormEncoding class]])
         {
             NSMutableData *data = [NSMutableData data];
             
@@ -94,7 +107,7 @@
     [encoding appendData:boundaryData];
     [encoding appendData:[@"--" dataUsingEncoding:NSUTF8StringEncoding]];
     
-    return [NLMultipartEncoding encodingForBody:encoding contentType:[@"multipart/form-data; boundary=" stringByAppendingString:boundary]];
+    return [NLFormEncoding encodingForBody:encoding contentType:[@"multipart/form-data; boundary=" stringByAppendingString:boundary]];
 }
 
 - (NSString *)NL_randomBoundaryForParts:(NSArray *)parts
