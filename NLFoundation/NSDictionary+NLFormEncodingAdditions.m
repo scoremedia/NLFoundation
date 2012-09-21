@@ -104,8 +104,7 @@
         [encoding appendData:part];
     }
     
-    [encoding appendData:boundaryData];
-    [encoding appendData:[@"--" dataUsingEncoding:NSUTF8StringEncoding]];
+    [encoding appendData:[[NSString stringWithFormat:@"--%@--\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
     
     return [NLFormEncoding encodingForBody:encoding contentType:[@"multipart/form-data; boundary=" stringByAppendingString:boundary]];
 }
