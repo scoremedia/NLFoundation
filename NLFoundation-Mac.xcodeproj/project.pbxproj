@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D7E96B5160CF74B00BAF2D5 /* NSDictionary+NLFormEncodingAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D7E96B3160CF74B00BAF2D5 /* NSDictionary+NLFormEncodingAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3D7E96B6160CF74B00BAF2D5 /* NSDictionary+NLFormEncodingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D7E96B4160CF74B00BAF2D5 /* NSDictionary+NLFormEncodingAdditions.m */; };
 		C6BF2FB013F819E800F8C320 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6BF2FAF13F819E800F8C320 /* Cocoa.framework */; };
 		C6BF2FBA13F819E800F8C320 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C6BF2FB813F819E800F8C320 /* InfoPlist.strings */; };
 		C6BF2FBE13F819E800F8C320 /* NLFoundation_Mac.m in Sources */ = {isa = PBXBuildFile; fileRef = C6BF2FBD13F819E800F8C320 /* NLFoundation_Mac.m */; };
@@ -47,6 +49,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3D7E96B3160CF74B00BAF2D5 /* NSDictionary+NLFormEncodingAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+NLFormEncodingAdditions.h"; sourceTree = "<group>"; };
+		3D7E96B4160CF74B00BAF2D5 /* NSDictionary+NLFormEncodingAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+NLFormEncodingAdditions.m"; sourceTree = "<group>"; };
 		C6BF2FAC13F819E800F8C320 /* NLFoundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NLFoundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6BF2FAF13F819E800F8C320 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		C6BF2FB213F819E800F8C320 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -201,6 +205,8 @@
 				C6BF2FFD13F81AD900F8C320 /* NSURL+NLAdditions.m */,
 				C6BF2FFE13F81AD900F8C320 /* NSDictionary+NLURLAdditions.h */,
 				C6BF2FFF13F81AD900F8C320 /* NSDictionary+NLURLAdditions.m */,
+				3D7E96B3160CF74B00BAF2D5 /* NSDictionary+NLFormEncodingAdditions.h */,
+				3D7E96B4160CF74B00BAF2D5 /* NSDictionary+NLFormEncodingAdditions.m */,
 				C6BF300013F81AD900F8C320 /* NSString+NLURLQueryStringAdditions.h */,
 				C6BF300113F81AD900F8C320 /* NSString+NLURLQueryStringAdditions.m */,
 				C6BF300213F81AD900F8C320 /* NSHTTPURLResponse+NLHTTPHeaderFieldsAdditions.h */,
@@ -229,6 +235,7 @@
 				C6BF301313F81AD900F8C320 /* NSString+NLURLQueryStringAdditions.h in Headers */,
 				C6BF301513F81AD900F8C320 /* NSHTTPURLResponse+NLHTTPHeaderFieldsAdditions.h in Headers */,
 				C6BF301713F81AD900F8C320 /* NSDateFormatter+NLHTTPAdditions.h in Headers */,
+				3D7E96B5160CF74B00BAF2D5 /* NSDictionary+NLFormEncodingAdditions.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -349,6 +356,7 @@
 				C6BF301413F81AD900F8C320 /* NSString+NLURLQueryStringAdditions.m in Sources */,
 				C6BF301613F81AD900F8C320 /* NSHTTPURLResponse+NLHTTPHeaderFieldsAdditions.m in Sources */,
 				C6BF301813F81AD900F8C320 /* NSDateFormatter+NLHTTPAdditions.m in Sources */,
+				3D7E96B6160CF74B00BAF2D5 /* NSDictionary+NLFormEncodingAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
