@@ -14,6 +14,7 @@
 #import <NLFoundation/NSObject+NLKVCAdditions.h>
 #import <NLFoundation/NSURL+NLAdditions.h>
 #import <NLFoundation/NSDictionary+NLURLAdditions.h>
+#import <NLFoundation/NSDictionary+NLFormEncodingAdditions.h>
 #import <NLFoundation/NSString+NLURLQueryStringAdditions.h>
 #import <NLFoundation/NSHTTPURLResponse+NLHTTPHeaderFieldsAdditions.h>
 #import <NLFoundation/NSDateFormatter+NLHTTPAdditions.h>
