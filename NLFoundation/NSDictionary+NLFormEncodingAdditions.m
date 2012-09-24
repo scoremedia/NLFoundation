@@ -69,22 +69,15 @@
         if([object isKindOfClass:[NLFormEncoding class]] && [object contentType] == nil)
             object = [object body];
         
+        if([object isKindOfClass:[NSData class]])
+            object = [NLFormEncoding encodingForBody:object contentType:@"application/octet-stream"];
+        
         if([object isKindOfClass:[NLFormEncoding class]])
         {
             NSMutableData *data = [NSMutableData data];
             
             [data appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"%@\"\r\nContent-Type: %@\r\n\r\n", key, [object contentType]] dataUsingEncoding:NSUTF8StringEncoding]];
             [data appendData:[object body]];
-            [data appendData:[@"\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
-            
-            [parts addObject:data];
-        }
-        else if([object isKindOfClass:[NSData class]])
-        {
-            NSMutableData *data = [NSMutableData data];
-            
-            [data appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"%@\"\r\n\r\n", key] dataUsingEncoding:NSUTF8StringEncoding]];
-            [data appendData:object];
             [data appendData:[@"\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
             
             [parts addObject:data];
