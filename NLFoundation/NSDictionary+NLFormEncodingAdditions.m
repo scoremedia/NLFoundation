@@ -10,7 +10,7 @@
 
 @implementation NLFormEncoding
 
-@synthesize contentType, body;
+@synthesize contentType, filename, body;
 
 + (id)encodingForBody:(NSData *)data
 {
@@ -22,6 +22,11 @@
     return [[self alloc] initWithBody:data contentType:type];
 }
 
++ (id)encodingForBody:(NSData *)data contentType:(NSString *)type filename:(NSString *)name
+{
+    return [[self alloc] initWithBody:data contentType:type filename:name];
+}
+
 - (id)initWithBody:(NSData *)data
 {
     return [self initWithBody:data contentType:nil];
@@ -29,9 +34,15 @@
 
 - (id)initWithBody:(NSData *)data contentType:(NSString *)type
 {
+    return [self initWithBody:data contentType:type filename:nil];
+}
+
+- (id)initWithBody:(NSData *)data contentType:(NSString *)type filename:(NSString *)name
+{
     if((self = [super init]))
     {
         contentType = [type copy];
+        filename    = [name copy];
         body        = [data copy];
     }
     
@@ -66,17 +77,22 @@
         if([object isKindOfClass:[NSDictionary class]])
             object = [object multipartEncoding];
         
-        if([object isKindOfClass:[NLFormEncoding class]] && [object contentType] == nil)
-            object = [object body];
-        
         if([object isKindOfClass:[NSData class]])
             object = [NLFormEncoding encodingForBody:object contentType:@"application/octet-stream"];
         
+        if([object isKindOfClass:[NLFormEncoding class]] && [object contentType] == nil)
+            object = [NLFormEncoding encodingForBody:[object body] contentType:@"application/octet-stream" filename:[object filename]];
+        
         if([object isKindOfClass:[NLFormEncoding class]])
         {
+            NSString      *file = [object filename];
             NSMutableData *data = [NSMutableData data];
             
-            [data appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"%@\"\r\nContent-Type: %@\r\n\r\n", key, [object contentType]] dataUsingEncoding:NSUTF8StringEncoding]];
+            if(file != nil)
+                [data appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"%@\"; filename=\"%@\"\r\nContent-Type: %@\r\n\r\n", key, [object filename], [object contentType]] dataUsingEncoding:NSUTF8StringEncoding]];
+            else
+                [data appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"%@\"\r\nContent-Type: %@\r\n\r\n", key, [object contentType]] dataUsingEncoding:NSUTF8StringEncoding]];
+            
             [data appendData:[object body]];
             [data appendData:[@"\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
             
