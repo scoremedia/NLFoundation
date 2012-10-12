@@ -139,4 +139,11 @@ static void _NLQueryParserParseParameterIntoDictionary(NSString *self, NSMutable
 	return [escapedString autorelease];
 }
 
+- (NSString *)stringByDecodingFromURL
+{
+    NSString *escapedString = (NSString *)CFURLCreateStringByReplacingPercentEscapes(kCFAllocatorDefault, (CFStringRef)self, NULL);
+    
+    return [escapedString autorelease];
+}
+
 @end

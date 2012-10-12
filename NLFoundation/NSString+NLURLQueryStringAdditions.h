@@ -15,5 +15,6 @@
 - (NSDictionary *)queryParameters;
 
 - (NSString *)stringByPreparingForURL;
+- (NSString *)stringByDecodingFromURL;
 
 @end
