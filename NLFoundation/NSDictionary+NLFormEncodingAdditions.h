@@ -14,9 +14,9 @@
 @property(nonatomic, readonly) NSString *filename;
 @property(nonatomic, readonly) NSData   *body;
 
-+ (id)encodingForBody:(NSData *)data;
-+ (id)encodingForBody:(NSData *)data contentType:(NSString *)type;
-+ (id)encodingForBody:(NSData *)data contentType:(NSString *)type filename:(NSString *)name;
++ (id)newEncodingForBody:(NSData *)data;
++ (id)newEncodingForBody:(NSData *)data contentType:(NSString *)type;
++ (id)newEncodingForBody:(NSData *)data contentType:(NSString *)type filename:(NSString *)name;
 
 - (id)initWithBody:(NSData *)data;
 - (id)initWithBody:(NSData *)data contentType:(NSString *)type;

@@ -12,17 +12,17 @@
 
 @synthesize contentType, filename, body;
 
-+ (id)encodingForBody:(NSData *)data
++ (id)newEncodingForBody:(NSData *)data
 {
     return [[self alloc] initWithBody:data];
 }
 
-+ (id)encodingForBody:(NSData *)data contentType:(NSString *)type
++ (id)newEncodingForBody:(NSData *)data contentType:(NSString *)type
 {
     return [[self alloc] initWithBody:data contentType:type];
 }
 
-+ (id)encodingForBody:(NSData *)data contentType:(NSString *)type filename:(NSString *)name
++ (id)newEncodingForBody:(NSData *)data contentType:(NSString *)type filename:(NSString *)name
 {
     return [[self alloc] initWithBody:data contentType:type filename:name];
 }
@@ -78,10 +78,10 @@
             object = [object multipartEncoding];
         
         if([object isKindOfClass:[NSData class]])
-            object = [NLFormEncoding encodingForBody:object contentType:@"application/octet-stream"];
+            object = [NLFormEncoding newEncodingForBody:object contentType:@"application/octet-stream"];
         
         if([object isKindOfClass:[NLFormEncoding class]] && [object contentType] == nil)
-            object = [NLFormEncoding encodingForBody:[object body] contentType:@"application/octet-stream" filename:[object filename]];
+            object = [NLFormEncoding newEncodingForBody:[object body] contentType:@"application/octet-stream" filename:[object filename]];
         
         if([object isKindOfClass:[NLFormEncoding class]])
         {
@@ -115,7 +115,7 @@
     
     [encoding appendData:[[NSString stringWithFormat:@"--%@--\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
     
-    return [NLFormEncoding encodingForBody:encoding contentType:[@"multipart/form-data; boundary=" stringByAppendingString:boundary]];
+    return [NLFormEncoding newEncodingForBody:encoding contentType:[@"multipart/form-data; boundary=" stringByAppendingString:boundary]];
 }
 
 - (NSString *)NL_randomBoundaryForParts:(NSArray *)parts
