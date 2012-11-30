@@ -78,10 +78,10 @@
             object = [object multipartEncoding];
         
         if([object isKindOfClass:[NSData class]])
-            object = [NLFormEncoding newEncodingForBody:object contentType:@"application/octet-stream"];
+            object = [[NLFormEncoding newEncodingForBody:object contentType:@"application/octet-stream"] autorelease];
         
         if([object isKindOfClass:[NLFormEncoding class]] && [object contentType] == nil)
-            object = [NLFormEncoding newEncodingForBody:[object body] contentType:@"application/octet-stream" filename:[object filename]];
+            object = [[NLFormEncoding newEncodingForBody:[object body] contentType:@"application/octet-stream" filename:[object filename]] autorelease];
         
         if([object isKindOfClass:[NLFormEncoding class]])
         {
@@ -115,7 +115,7 @@
     
     [encoding appendData:[[NSString stringWithFormat:@"--%@--\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
     
-    return [NLFormEncoding newEncodingForBody:encoding contentType:[@"multipart/form-data; boundary=" stringByAppendingString:boundary]];
+    return [[NLFormEncoding newEncodingForBody:encoding contentType:[@"multipart/form-data; boundary=" stringByAppendingString:boundary]] autorelease];
 }
 
 - (NSString *)NL_randomBoundaryForParts:(NSArray *)parts
