@@ -8,22 +8,42 @@
 
 #import "NSDateFormatter+NLHTTPAdditions.h"
 
+@interface NSDateFormatter (NLHTTPAdditions_private)
++ (id)dateFormatterForHTTPDateField;
+@end
+
+@implementation NSDateFormatter (NLHTTPAdditions_private)
++ (id)dateFormatterForHTTPDateField
+{
+    static NSDateFormatter *formatter;
+    
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        if(formatter == nil)
+        {
+            formatter = [[self alloc] init];
+            [formatter setLocale:[[[NSLocale alloc] initWithLocaleIdentifier:@"en_US"] autorelease]];
+            [formatter setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"GMT"]];
+            [formatter setDateFormat:@"EEE, dd MMM yyyy HH:mm:ss z"];
+        }
+    });
+    
+    return formatter;
+}
+@end
 
 @implementation NSDateFormatter (NLHTTPAdditions)
 
-+ (id)dateFormatterForHTTPDateField;
++ (NSDate *)dateForHTTPDateField:(NSString *)string
 {
-    static NSDateFormatter *formatter = nil;
+    dispatch_queue_t formatterQueue = dispatch_queue_create("formatter queue", NULL);
+    NSDateFormatter *dateFormatter = [NSDateFormatter dateFormatterForHTTPDateField];
     
-    if(formatter == nil)
-    {
-        formatter = [[self alloc] init];
-        [formatter setLocale:[[[NSLocale alloc] initWithLocaleIdentifier:@"en_US"] autorelease]];
-        [formatter setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"GMT"]];
-        [formatter setDateFormat:@"EEE, dd MMM yyyy HH:mm:ss z"];
-    }
-    
-    return formatter;
+    __block NSDate *date = nil;
+    dispatch_sync(formatterQueue, ^{
+        date = [dateFormatter dateFromString:string];
+    });
+    return date;
 }
 
 @end

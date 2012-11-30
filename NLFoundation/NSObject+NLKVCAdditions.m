@@ -129,7 +129,7 @@
     NSDate   *date = defaultValue;
     NSString *str  = [self nonNullValueForKey:aKey];
     
-    if([str isKindOfClass:[NSString class]]) date = [[NSDateFormatter dateFormatterForHTTPDateField] dateFromString:str];
+    if([str isKindOfClass:[NSString class]]) date = [NSDateFormatter dateForHTTPDateField:str];
     
     return date;
 }

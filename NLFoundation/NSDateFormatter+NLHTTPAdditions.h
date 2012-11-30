@@ -10,5 +10,5 @@
 
 
 @interface NSDateFormatter (NLHTTPAdditions)
-+ (id)dateFormatterForHTTPDateField;
++ (NSDate *)dateForHTTPDateField:(NSString *)string;
 @end
