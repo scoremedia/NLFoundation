@@ -36,9 +36,16 @@
 
 + (NSDate *)dateForHTTPDateField:(NSString *)string
 {
-    dispatch_queue_t formatterQueue = dispatch_queue_create("formatter queue", NULL);
-    NSDateFormatter *dateFormatter = [NSDateFormatter dateFormatterForHTTPDateField];
+    // NSDateFormatter is not thread-safe, so perform these requests synchronously
     
+    static dispatch_queue_t formatterQueue;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        formatterQueue = dispatch_queue_create("formatter queue", NULL);
+    });
+    
+    NSDateFormatter *dateFormatter = [NSDateFormatter dateFormatterForHTTPDateField];
+
     __block NSDate *date = nil;
     dispatch_sync(formatterQueue, ^{
         date = [dateFormatter dateFromString:string];
