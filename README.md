@@ -2,7 +2,7 @@ NLFoundation
 ------------
 NLFoundation is a compilation of utilities around Foundation classes.
 
-INstallation
+Installation
 ------------
 Open up the Xcode workspace and select either the NLFoundation-iOS or NLFoundation-Mac scheme. If you are select the NLFoundation-iOS scheme ensure you are targeting an iOS device.
 
