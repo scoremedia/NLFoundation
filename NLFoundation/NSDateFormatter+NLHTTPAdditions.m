@@ -10,10 +10,29 @@
 
 @interface NSDateFormatter (NLHTTPAdditions_private)
 + (id)dateFormatterForHTTPDateField;
++ (id)legacyDateFormatterForHTTPDateField;
 @end
 
 @implementation NSDateFormatter (NLHTTPAdditions_private)
 + (id)dateFormatterForHTTPDateField
+{
+    static NSDateFormatter *formatter;
+    
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        if(formatter == nil)
+        {
+            formatter = [[self alloc] init];
+            [formatter setLocale:[[[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"] autorelease]];
+            [formatter setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"GMT"]];
+            [formatter setDateFormat:@"yyyy'-'MM'-'dd'T'HH':'mm':'ss.SSS'Z'"];
+        }
+    });
+    
+    return formatter;
+}
+
++ (id)legacyDateFormatterForHTTPDateField
 {
     static NSDateFormatter *formatter;
     
@@ -45,10 +64,15 @@
     });
     
     NSDateFormatter *dateFormatter = [NSDateFormatter dateFormatterForHTTPDateField];
-
-    __block NSDate *date = nil;
+    NSDateFormatter *legacyDateFormatter = [NSDateFormatter legacyDateFormatterForHTTPDateField];
+    
+   __block NSDate *date = nil;
     dispatch_sync(formatterQueue, ^{
         date = [dateFormatter dateFromString:string];
+        if (!date)
+        {
+            date = [legacyDateFormatter dateFromString:string];
+        }
     });
     return date;
 }
