@@ -183,7 +183,7 @@
 		27A45AB11819BE5700B1E954 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "theScore, Inc.";
 			};
 			buildConfigurationList = 27A45AB41819BE5700B1E954 /* Build configuration list for PBXProject "NLFoundation" */;
