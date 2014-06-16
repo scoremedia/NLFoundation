@@ -26,5 +26,3 @@ static inline id BOOL_OBJ(BOOL v) { return (id)(v ? kCFBooleanTrue : kCFBooleanF
 
 #endif
 
-CFTypeRef _NLCFAutorelease(CFTypeRef obj);
-#define NLCFAutorelease(var) ((__typeof__(var))_NLCFAutorelease(var))

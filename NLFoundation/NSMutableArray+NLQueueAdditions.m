@@ -13,7 +13,7 @@
 - (id)firstObject;
 {
     id ret = nil;
-    if([self count] > 0) ret = [[[self objectAtIndex:0] retain] autorelease];
+    if([self count] > 0) ret = [self objectAtIndex:0];
     return ret;
 }
 

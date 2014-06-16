@@ -110,7 +110,7 @@ static void _NLQueryParserParseParameterIntoDictionary(NSString *self, NSMutable
     for(NSString *parameter in [self componentsSeparatedByString:@"&"])
         _NLQueryParserParseParameterIntoDictionary(self, ret, parameter);
     
-    return [[[NSDictionary alloc] initWithDictionary:ret copyItems:YES] autorelease];
+    return [[NSDictionary alloc] initWithDictionary:ret copyItems:YES];
 }
 
 - (NSString *)URLStringByAppendingQueryString:(NSString *)query;
@@ -130,20 +130,20 @@ static void _NLQueryParserParseParameterIntoDictionary(NSString *self, NSMutable
 }
 
 - (NSString *)stringByPreparingForURL {
-	NSString *escapedString = (NSString *)CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault,
+	NSString *escapedString = (NSString *)CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault,
 																				  (CFStringRef)self,
 																				  NULL,
 																				  (CFStringRef)@":/?=,!$&'()*+;[]@#",
-																				  CFStringConvertNSStringEncodingToEncoding(NSUTF8StringEncoding));
+																				  CFStringConvertNSStringEncodingToEncoding(NSUTF8StringEncoding)));
 	
-	return [escapedString autorelease];
+	return escapedString;
 }
 
 - (NSString *)stringByDecodingFromURL
 {
-    NSString *escapedString = (NSString *)CFURLCreateStringByReplacingPercentEscapes(kCFAllocatorDefault, (CFStringRef)self, NULL);
+    NSString *escapedString = (NSString *)CFBridgingRelease(CFURLCreateStringByReplacingPercentEscapes(kCFAllocatorDefault, (CFStringRef)self, NULL));
     
-    return [escapedString autorelease];
+    return escapedString;
 }
 
 @end

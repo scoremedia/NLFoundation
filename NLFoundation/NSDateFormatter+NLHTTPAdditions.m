@@ -23,7 +23,7 @@
         if(formatter == nil)
         {
             formatter = [[self alloc] init];
-            [formatter setLocale:[[[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"] autorelease]];
+            [formatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"]];
             [formatter setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"GMT"]];
             [formatter setDateFormat:@"yyyy'-'MM'-'dd'T'HH':'mm':'ss.SSS'Z'"];
         }
@@ -41,7 +41,7 @@
         if(formatter == nil)
         {
             formatter = [[self alloc] init];
-            [formatter setLocale:[[[NSLocale alloc] initWithLocaleIdentifier:@"en_US"] autorelease]];
+            [formatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US"]];
             [formatter setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"GMT"]];
             [formatter setDateFormat:@"EEE, dd MMM yyyy HH:mm:ss z"];
         }

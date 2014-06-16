@@ -7,8 +7,3 @@
 //
 
 #import "NLUtilities.h"
-
-CFTypeRef _NLCFAutorelease(CFTypeRef obj)
-{
-    return (CFTypeRef)[(id)obj autorelease];
-}

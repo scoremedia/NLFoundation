@@ -301,6 +301,7 @@
 		27A45ADD1819BE5700B1E954 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
 				DSTROOT = /tmp/NLFoundation.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = NLFoundation/NLFoundation_Prefix.pch;
@@ -313,6 +314,7 @@
 		27A45ADE1819BE5700B1E954 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
 				DSTROOT = /tmp/NLFoundation.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = NLFoundation/NLFoundation_Prefix.pch;

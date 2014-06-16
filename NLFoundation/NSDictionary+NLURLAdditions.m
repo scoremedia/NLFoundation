@@ -13,9 +13,9 @@
 
 static NSString *_NLQueryStringByAddingPercentEscapes(NSString *string)
 {
-    NSString *escapedString = (NSString *)CFURLCreateStringByAddingPercentEscapes(NULL, (CFStringRef)string, NULL, (CFStringRef)@":/?=,!$&'()*+;[]@#", CFStringConvertNSStringEncodingToEncoding(NSUTF8StringEncoding));
+    NSString *escapedString = (NSString *)CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(NULL, (CFStringRef)string, NULL, (CFStringRef)@":/?=,!$&'()*+;[]@#", CFStringConvertNSStringEncodingToEncoding(NSUTF8StringEncoding)));
     
-    return [escapedString autorelease];
+    return escapedString;
 }
 
 static NSString *_NLQueryStringFromArrayWithName(NSString *name, NSArray *array)
@@ -24,23 +24,23 @@ static NSString *_NLQueryStringFromArrayWithName(NSString *name, NSArray *array)
     
     NSMutableString *ret = [NSMutableString stringWithCapacity:[name length] * [array count]];
     
-    NSAutoreleasePool *local = [[NSAutoreleasePool alloc] init];
+    @autoreleasepool {
     
-    BOOL isFirst = YES;
+        BOOL isFirst = YES;
+        
+        for(id obj in array)
+        {
+            if(isFirst) isFirst = NO;
+            else [ret appendString:@"&"];
+            
+            [ret appendString:name];
+            
+            if(obj != [NSNull null]) [ret appendFormat:@"=%@", _NLQueryStringByAddingPercentEscapes([obj description])];
+        }
     
-    for(id obj in array)
-    {
-        if(isFirst) isFirst = NO;
-        else [ret appendString:@"&"];
-        
-        [ret appendString:name];
-        
-        if(obj != [NSNull null]) [ret appendFormat:@"=%@", _NLQueryStringByAddingPercentEscapes([obj description])];
     }
     
-    [local drain];
-    
-    return [[ret copy] autorelease];
+    return [ret copy];
 }
 
 static NSString *_NLQueryStringFromDictionaryWithName(NSString *name, NSDictionary *dict)
@@ -49,75 +49,76 @@ static NSString *_NLQueryStringFromDictionaryWithName(NSString *name, NSDictiona
     
     BOOL isFirst = YES;
     
-    NSAutoreleasePool *local = [[NSAutoreleasePool alloc] init];
+    @autoreleasepool {
     
-    for(NSString *key in dict)
-    {
-        id obj = [dict objectForKey:key];
-        
-        if(isFirst) isFirst = NO;
-        else [ret appendString:@"&"];
-        
-        key = _NLQueryStringByAddingPercentEscapes(key);
-        NSString *fullKey = [NSString stringWithFormat:@"%@[%@]", name, key];
-        
-        if([obj isKindOfClass:[NSArray class]])
-            [ret appendString:_NLQueryStringFromArrayWithName(fullKey, obj)];
-        else if([obj isKindOfClass:[NSDictionary class]])
-            [ret appendString:_NLQueryStringFromDictionaryWithName(fullKey, obj)];
-        else
+        for(__strong NSString *key in dict)
         {
-            [ret appendString:fullKey];
+            id obj = [dict objectForKey:key];
             
-            if([obj isKindOfClass:[NSValue class]] && strcmp([obj objCType], @encode(BOOL)) && strcmp([obj objCType], @encode(_Bool)))
-                obj = [obj boolValue] ? @"true" : @"false";
+            if(isFirst) isFirst = NO;
+            else [ret appendString:@"&"];
             
-            if(obj != [NSNull null]) [ret appendFormat:@"=%@", _NLQueryStringByAddingPercentEscapes([obj description])];
+            key = _NLQueryStringByAddingPercentEscapes(key);
+            NSString *fullKey = [NSString stringWithFormat:@"%@[%@]", name, key];
+            
+            if([obj isKindOfClass:[NSArray class]])
+                [ret appendString:_NLQueryStringFromArrayWithName(fullKey, obj)];
+            else if([obj isKindOfClass:[NSDictionary class]])
+                [ret appendString:_NLQueryStringFromDictionaryWithName(fullKey, obj)];
+            else
+            {
+                [ret appendString:fullKey];
+                
+                if([obj isKindOfClass:[NSValue class]] && strcmp([obj objCType], @encode(BOOL)) && strcmp([obj objCType], @encode(_Bool)))
+                    obj = [obj boolValue] ? @"true" : @"false";
+                
+                if(obj != [NSNull null]) [ret appendFormat:@"=%@", _NLQueryStringByAddingPercentEscapes([obj description])];
+            }
         }
+    
     }
     
-    [local drain];
-    
-    return [[ret copy] autorelease];
+    return [ret copy];
 }
 
 - (NSString *)queryString
 {
-    NSAutoreleasePool *local = [[NSAutoreleasePool alloc] init];
-    NSMutableString   *temp  = [NSMutableString string];
+    NSString *ret;
     
-    BOOL isFirst = YES;
-    
-    for(NSString *key in self)
-    {
-        if(isFirst) isFirst = NO;
-        else [temp appendString:@"&"];
+    @autoreleasepool {
+        NSMutableString *temp  = [NSMutableString string];
         
-        id obj = [self objectForKey:key];
+        BOOL isFirst = YES;
         
-        key = _NLQueryStringByAddingPercentEscapes(key);
-        
-        if([obj isKindOfClass:[NSArray class]])
-            [temp appendString:_NLQueryStringFromArrayWithName(key, obj)];
-        else if([obj isKindOfClass:[NSDictionary class]])
-            [temp appendString:_NLQueryStringFromDictionaryWithName(key, obj)];
-        else
+        for(__strong NSString *key in self)
         {
-            [temp appendString:key];
+            if(isFirst) isFirst = NO;
+            else [temp appendString:@"&"];
             
-            if(obj != [NSNull null])
+            id obj = [self objectForKey:key];
+            
+            key = _NLQueryStringByAddingPercentEscapes(key);
+            
+            if([obj isKindOfClass:[NSArray class]])
+                [temp appendString:_NLQueryStringFromArrayWithName(key, obj)];
+            else if([obj isKindOfClass:[NSDictionary class]])
+                [temp appendString:_NLQueryStringFromDictionaryWithName(key, obj)];
+            else
             {
-                [temp appendString:@"="];
-                [temp appendString:_NLQueryStringByAddingPercentEscapes([obj description])];
+                [temp appendString:key];
+                
+                if(obj != [NSNull null])
+                {
+                    [temp appendString:@"="];
+                    [temp appendString:_NLQueryStringByAddingPercentEscapes([obj description])];
+                }
             }
         }
+        
+        ret = [temp copy];
     }
     
-    NSString *ret = [temp copy];
-    
-    [local drain];
-    
-    return [ret autorelease];
+    return ret;
 }
 
 @end
